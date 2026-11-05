@@ -84,7 +84,7 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 - The rules for publishing a derivative course, including attribution and content permissions.
 - The rating scale, rating eligibility, and the exact formula and presentation for top courses.
 - Search filters, language handling, and how published courses are reviewed or reported.
-- The MVP release boundary and quality targets.
+- The MVP release boundary is proposed in [ROADMAP.md](ROADMAP.md); the team still needs to confirm quality targets and release evidence.
 - VPS capacity, off-server backups, restore objectives, and HPA limits. These are tracked as deployment work for later agreement.
 
 These questions should be resolved during refinement before acceptance criteria and estimates are finalized.

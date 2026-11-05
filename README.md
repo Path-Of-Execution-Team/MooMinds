@@ -10,5 +10,6 @@ This repository is the central place for MooMinds documentation, planning, and d
 - The team estimates story points with Planning Poker using the scale 1, 2, 3, 5, 8, 13. Points are assigned only after a team estimate.
 - See the [Scrum workflow guide](docs/SCRUM.md) for planning and retrospectives.
 - See the [product and architecture assumptions](docs/PRODUCT.md) for the confirmed scope and open decisions.
+- See the [release roadmap and MVP boundary](docs/ROADMAP.md) for the proposed milestone goals.
 
 Until an organization-wide GitHub Project is available, the backlog remains accessible through this repository's Issues.
