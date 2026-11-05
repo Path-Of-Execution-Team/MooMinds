@@ -9,5 +9,6 @@ This repository is the central place for MooMinds documentation, planning, and d
 - Milestones represent release goals. Iterations in GitHub Projects represent sprints; milestones are not used as sprint substitutes.
 - The team estimates story points with Planning Poker using the scale 1, 2, 3, 5, 8, 13. Points are assigned only after a team estimate.
 - See the [Scrum workflow guide](docs/SCRUM.md) for planning and retrospectives.
+- See the [product and architecture assumptions](docs/PRODUCT.md) for the confirmed scope and open decisions.
 
 Until an organization-wide GitHub Project is available, the backlog remains accessible through this repository's Issues.
