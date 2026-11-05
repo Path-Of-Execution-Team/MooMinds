@@ -4,7 +4,7 @@ This repository is the central place for MooMinds documentation, planning, and d
 
 ## How we work
 
-- [Product backlog and tasks](https://github.com/Path-Of-Execution-Team/MooMinds/issues) live here. Each issue should identify the component repositories involved.
+- The [central GitHub Project](https://github.com/orgs/Path-Of-Execution-Team/projects/10) tracks work across all four repositories. [Product backlog issues](https://github.com/Path-Of-Execution-Team/MooMinds/issues) live here; each should identify the components involved.
 - Component-specific bugs can be reported in their respective repositories and linked to a parent issue here.
 - Milestones represent release goals. Iterations in GitHub Projects represent sprints; milestones are not used as sprint substitutes.
 - The team estimates story points with Planning Poker using the scale 1, 2, 3, 5, 8, 13. Points are assigned only after a team estimate.
@@ -12,4 +12,4 @@ This repository is the central place for MooMinds documentation, planning, and d
 - See the [product and architecture assumptions](docs/PRODUCT.md) for the confirmed scope and open decisions.
 - See the [release roadmap and MVP boundary](docs/ROADMAP.md) for the proposed milestone goals.
 
-Until an organization-wide GitHub Project is available, the backlog remains accessible through this repository's Issues.
+New issues should be added to the central Project during refinement. Story points and sprint assignments are set only after team planning.

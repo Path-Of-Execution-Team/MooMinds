@@ -1,26 +1,20 @@
-# Scrum w MooMinds
+# Scrum in MooMinds
 
-## Źródło prawdy
+## Source of truth
 
-Issues w repozytorium MooMinds tworzą backlog produktu. Zadanie opisuje cel, kryteria akceptacji oraz repozytoria, których dotyczy. Issues w repozytoriach API, GUI i Worker służą błędom i szczegółom technicznym jednego komponentu; linkujemy je z zadaniem nadrzędnym.
+The [organization GitHub Project](https://github.com/orgs/Path-Of-Execution-Team/projects/10) is the central work board for MooMinds, API, GUI, and Worker. Product stories and cross-component decisions live as [MooMinds issues](https://github.com/Path-Of-Execution-Team/MooMinds/issues). Component-specific implementation issues and bugs can live in the relevant component repository and should link to their product issue.
 
-Projekt organizacyjny GitHub Projects powinien obejmować wszystkie cztery repozytoria. Docelowe pola: Status (Backlog, Ready, In Progress, In Review, Done), Priority (P0, P1, P2), Story points (Number) oraz Iteration (sprint dwutygodniowy). Widoki: Backlog, Current sprint, Roadmap i Done. Ustawienie tych pól wymaga dostępu do Projects.
+The Project has Status (Backlog, Ready, In Progress, In Review, Done), Story points (number), and Sprint (two-week iteration) fields. Its views are All work, Backlog, Current sprint, Roadmap, and Done. Release milestones are defined in [ROADMAP.md](ROADMAP.md) and are separate from sprints. Three provisional two-week iterations begin on 9 November, 23 November, and 7 December 2026. The team can adjust the cadence and dates before its first sprint; no issue has been assigned to a sprint. New issues must be added to the Project during refinement; linking a repository does not automatically add every new issue.
 
-## Rytm
+## Working rhythm
 
-1. Refinement: doprecyzuj cel i kryteria akceptacji; podziel zbyt duże zadania.
-2. Planning Poker: wszyscy wybierają kartę równocześnie i ujawniają ją po oddaniu głosów. Przy rozbieżności omawiamy założenia i głosujemy ponownie. Zapisujemy uzgodnioną liczbę w polu Story points projektu; do czasu dostępności projektu można zapisać ją w issue.
-3. Sprint planning: wybierz gotowe zadania zgodnie z pojemnością zespołu; przypisz je do iteracji. Nie twórz sprintu ani dat wstecz.
-4. W trakcie sprintu: aktualizuj Status, połącz PR z issue i oznacz blokady w komentarzu.
-5. Review: pokaż działający rezultat i zweryfikuj kryteria akceptacji.
-6. Retrospektywa: otwórz issue z szablonu „Retrospektywa”, zapisz konkretne usprawnienia jako osobne issues i sprawdź je w następnym sprincie.
+1. **Refinement:** clarify the user goal, acceptance criteria, dependencies, and component ownership. Split large stories. Move an issue from Backlog to Ready when the team can plan it.
+2. **Planning Poker:** each team member selects a Fibonacci card privately; reveal together, discuss differences, and vote again if needed. Record only the agreed estimate in Story points. The scale is 1, 2, 3, 5, 8, 13; `?` means more refinement is needed. Split work estimated above 13. Points represent relative effort and uncertainty, not hours or individual performance.
+3. **Sprint planning:** select Ready issues based on team capacity and a sprint goal, then assign the Sprint field. Do not fill an iteration with the entire release milestone.
+4. **During the sprint:** update Status, link pull requests to issues, and note blockers on the issue.
+5. **Review:** show the working result and check its acceptance criteria.
+6. **Retrospective:** use the retrospective issue template, capture specific improvements as issues, and inspect them in the next sprint.
 
-## Milestones i szacowanie
+## Planning Poker integration
 
-Milestone oznacza wydanie lub ważny cel, wspólny nazwą w repozytoriach, lecz technicznie osobny dla każdego repozytorium. Początkowy milestone „MVP — zakres do ustalenia” nie ma terminu ani arbitralnie przypisanych zadań.
-
-Skala punktów: 1, 2, 3, 5, 8, 13; „?” oznacza brak informacji i wymaga doprecyzowania. Zadanie większe niż 13 dzielimy. Punkty są miarą względnej złożoności, nie godzin ani oceny osoby.
-
-## Planning Poker
-
-Na start można przeprowadzić sesję w dowolnym narzędziu z kartami Fibonacci, wklejając linki do issues. Nie instalujemy aplikacji GitHub ani nie dajemy jej dostępu do repozytoriów bez wspólnej decyzji zespołu. Po sesji przenosimy tylko uzgodniony wynik do issue/projektu. Automatyczna integracja wymaga wyboru narzędzia i autoryzacji aplikacji przez właściciela organizacji.
+A team can use an external simultaneous-vote Planning Poker room with links to GitHub issues and then record the consensus in Story points. Choose a tool together before installing a GitHub App or granting repository access. A deeper automated integration needs a tool choice and organization authorization; the current workflow requires no additional app permissions.
