@@ -26,10 +26,10 @@ Users can publish their own learning courses, such as a course covering 2,000 co
 
 ## Study modes
 
-- **Simple mode:** show the prompt and four shuffled answer choices (A–D): the correct answer and three distinct distractors drawn from other cards in the same personal course copy.
-- **Hard mode:** show the prompt and an input field where the learner types the answer without seeing choices.
+- **Simple mode:** show the prompt and four shuffled answer choices (A–D) when possible: the correct answer and three distinct distractors drawn from other cards in the same personal course copy. If only two distinct distractors are available, show three shuffled choices instead.
+- **Hard mode:** show the prompt and require the learner to type an answer without seeing choices. After submission, reveal the expected answer and let the learner mark their own response as correct or incorrect. The application does not automatically judge typed text.
 - The selected mode belongs to the learner's personal copy. Both modes use the same five-box Leitner progression; only how an answer is given and checked changes.
-- Rules for courses with fewer than four distinct answers, text-answer matching, and cards whose answer is an image still need refinement.
+- Rules for courses with fewer than three distinct answers and cards whose answer is an image still need refinement.
 
 ## Adding course content
 
@@ -76,7 +76,7 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 - Whether another session can start immediately when more cards remain due after a full session.
 - The exact CSV columns, duplicate handling, and row and file-size limits.
 - Image placement on cards, supported formats, size limits, storage location, and accessibility text.
-- How to generate multiple-choice options when the course lacks three distinct distractors, and how to judge typed answers (spelling, case, whitespace, accents, synonyms, and formulas).
+- How simple mode behaves when fewer than three distinct answers exist, and how image-only answers work in hard mode.
 - Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
 - Whether courses can also be private or unlisted, and whether they contain anything beyond flashcards.
