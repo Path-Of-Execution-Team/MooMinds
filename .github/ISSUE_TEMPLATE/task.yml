@@ -1,0 +1,25 @@
+name: Zadanie techniczne
+description: Praca techniczna, dokumentacyjna lub organizacyjna
+title: "[Task] "
+labels: ["type:task"]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Oczekiwany rezultat
+      description: Jaki rezultat ma być widoczny po zamknięciu zadania?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Zakres prac
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Repozytoria i powiązania
+    validations:
+      required: false

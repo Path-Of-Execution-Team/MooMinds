@@ -1,0 +1,34 @@
+name: Historia użytkownika
+description: Funkcja lub potrzeba użytkownika do backlogu produktu
+title: "[Story] "
+labels: ["type:story"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Cel użytkownika
+      description: Kto czego potrzebuje i po co?
+      placeholder: "Jako ... chcę ..., aby ..."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Kryteria akceptacji
+      description: Obserwowalne warunki ukończenia
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Zakres i repozytoria
+      description: API, GUI, Worker lub prace przekrojowe; linki do powiązanych issues
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Założenia i pytania
+    validations:
+      required: false

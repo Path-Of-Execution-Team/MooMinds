@@ -1,0 +1,30 @@
+name: Retrospektywa
+description: Podsumowanie sprintu i działania usprawniające
+title: "[Retro] Sprint "
+labels: ["type:retro"]
+body:
+  - type: input
+    id: sprint
+    attributes:
+      label: Sprint i daty
+    validations:
+      required: true
+  - type: textarea
+    id: worked
+    attributes:
+      label: Co działało dobrze?
+    validations:
+      required: true
+  - type: textarea
+    id: improve
+    attributes:
+      label: Co utrudniało pracę?
+    validations:
+      required: true
+  - type: textarea
+    id: actions
+    attributes:
+      label: Usprawnienia
+      description: Każde uzgodnione działanie zapisz potem jako issue z właścicielem i terminem przeglądu.
+    validations:
+      required: true
