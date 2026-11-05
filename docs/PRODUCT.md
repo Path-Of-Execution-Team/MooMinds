@@ -24,6 +24,14 @@ Users can publish their own learning courses, such as a course covering 2,000 co
 - The default session contains up to **20 cards**. When reviews are due, the target mix is **10 new cards and 10 due reviews**. If one group has too few available cards, the other group fills the remaining places. With no reviews due, up to 20 new cards can appear.
 - Session size and mix can be changed in the personal copy's settings.
 
+## Adding course content
+
+- A course creator can add and edit flashcards through a form. A learner can also add or edit cards in their personal study copy without changing the source course.
+- The initial card model has a prompt and an answer. Cards may include uploaded images; whether images belong on the prompt, answer, or both sides needs a UI decision.
+- A creator or learner can import multiple flashcards from a CSV file. The import flow should show a preview, allow column mapping, report invalid rows, and require confirmation before adding cards.
+- Images can be attached through the card editor. Whether CSV may reference image files, and how a batch of images is matched to rows, remains open.
+- Uploaded files need type and size checks, safe storage and serving, and limits appropriate to the VPS. See [OWASP's file-upload guidance](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html).
+
 ## Agreed community-course model
 
 - A course has a creator and published versions. Editing a published course produces a new version rather than silently changing existing learners' copies.
@@ -59,6 +67,8 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 ## Open decisions
 
 - Whether another session can start immediately when more cards remain due after a full session.
+- The exact CSV columns, duplicate handling, row limits, and whether import can include images.
+- Image placement on cards, supported formats, size limits, storage location, and accessibility text.
 - Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
 - Whether courses can also be private or unlisted, and whether they contain anything beyond flashcards.
