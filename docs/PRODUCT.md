@@ -26,15 +26,15 @@ Users can publish their own learning courses, such as a course covering 2,000 co
 
 ## Study modes
 
-- **Simple mode:** show the prompt and four shuffled answer choices (A–D) when possible: the correct answer and three distinct distractors drawn from other cards in the same personal course copy. If only two distinct distractors are available, show three shuffled choices instead.
-- **Hard mode:** show the prompt and require the learner to type an answer without seeing choices. After submission, reveal the expected answer and let the learner mark their own response as correct or incorrect. The application does not automatically judge typed text.
+- **Simple mode:** show a shuffled multiple-choice question. A single-answer card normally shows four choices (A–D), with distractors from other cards in the personal course copy; it shows three choices when only two distinct distractors are available. A card marked as having multiple correct answers shows the choices and correct set defined by the creator, and the learner can select more than one choice. Simple mode remains choice-based when a course has too few distinct answers to generate distractors.
+- **Hard mode:** show the prompt and require the learner to type an answer without seeing choices. After submission, reveal the expected answer or answers and let the learner mark their own response as correct or incorrect. The application does not automatically judge typed text.
 - The selected mode belongs to the learner's personal copy. Both modes use the same five-box Leitner progression; only how an answer is given and checked changes.
-- Rules for courses with fewer than three distinct answers and cards whose answer is an image still need refinement.
+- Rules for filling missing choices on single-answer cards, partial selection on multi-answer cards, and cards whose answer is an image still need refinement.
 
 ## Adding course content
 
 - A course creator can add and edit flashcards through a form. A learner can also add or edit cards in their personal study copy without changing the source course.
-- The initial card model has a prompt and an answer. Cards may include uploaded images; whether images belong on the prompt, answer, or both sides needs a UI decision.
+- The initial card model has a prompt and an answer. For simple mode, a course creator may mark a card as having multiple correct answers and explicitly identify the correct choices in the card form. Cards may include uploaded images; whether images belong on the prompt, answer, or both sides needs a UI decision.
 - A creator or learner can import multiple flashcards from a **text-only CSV file**. The import flow should show a preview, allow column mapping, report invalid rows, and require confirmation before adding cards. CSV import does not upload images or fetch image references.
 - After import, the user may open any imported card in the editor and attach an image separately.
 - Uploaded files need type and size checks, safe storage and serving, and limits appropriate to the VPS. See [OWASP's file-upload guidance](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html).
@@ -74,9 +74,9 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 ## Open decisions
 
 - Whether another session can start immediately when more cards remain due after a full session.
-- The exact CSV columns, duplicate handling, and row and file-size limits.
+- The exact CSV columns, duplicate handling, and row and file-size limits, including how cards with multiple correct answers are represented in text-only CSV.
 - Image placement on cards, supported formats, size limits, storage location, and accessibility text.
-- How simple mode behaves when fewer than three distinct answers exist, and how image-only answers work in hard mode.
+- How missing choices are supplied when other cards do not provide enough distinct distractors, how multi-answer selections are scored, and how image-only answers work in hard mode.
 - Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
 - Whether courses can also be private or unlisted, and whether they contain anything beyond flashcards.
