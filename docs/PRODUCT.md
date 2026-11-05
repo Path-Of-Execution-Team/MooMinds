@@ -13,14 +13,24 @@ Users can publish their own learning courses, such as a course covering 2,000 co
 - MooMinds uses a chosen default interval schedule of **1, 2, 4, 8, and 16 days** for boxes one through five. These are product defaults, not a claim that every Leitner implementation uses the same dates.
 - A correct answer moves a card to the next box, up to box five. An incorrect answer returns it to box one. A correctly answered card in box five remains in box five and becomes due again after that box's interval.
 - A learner can change the five intervals in the settings of their own course copy. The intervals apply to that learner's progress in that copy; changing them does not alter the source course or anyone else's schedule.
-- The exact recalculation of cards already scheduled when intervals change still needs an acceptance rule.
+- Changing intervals after learning has started does not move existing due dates. The new intervals apply after each card's next answer.
+- When a learner edits one interval, the form suggests values for that box and later boxes by continuing the doubling pattern; earlier boxes stay unchanged. The learner may adjust every suggested value before saving.
+
+## Study setup and session size
+
+- Creating or publishing a source course is separate from studying it. The creator also starts a personal study copy to learn from their own course; source edits do not automatically change that copy.
+- Before the first lesson from any personal copy, a short form lets the learner set the session size, the mix of new cards and reviews, and all five Leitner intervals. This happens once per study copy. Reminder preferences are configured separately.
+- Each learner chooses their own settings; a copied course does not inherit its creator's learning intervals.
+- The default session contains up to **20 cards**. When reviews are due, the target mix is **10 new cards and 10 due reviews**. If one group has too few available cards, the other group fills the remaining places. With no reviews due, up to 20 new cards can appear.
+- Session size and mix can be changed in the personal copy's settings.
 
 ## Agreed community-course model
 
 - A course has a creator and published versions. Editing a published course produces a new version rather than silently changing existing learners' copies.
-- A learner makes a personal copy of a published course. They own and may edit that copy, its flashcards, and its Leitner intervals. Their progress belongs only to them.
+- A learner makes a personal study copy of a course. This includes the creator when they want to study their own course. They may edit that copy, its flashcards, and its Leitner intervals. Their progress belongs only to them.
 - The copy keeps a link to its source course and the source version from which it was made. When the creator publishes a new version, the learner may preview and optionally apply source changes. Updates are not automatic and must not silently overwrite local edits.
-- Unchanged cards keep their learning progress and new cards begin in box one after an accepted update. Removed, substantially changed, and locally edited cards require explicit update/conflict rules. Stable logical card identities across versions help recognize unchanged cards.
+- An update is shown in one preview. The learner chooses which source changes to import; locally edited cards are kept unless the learner explicitly selects the source version for that card. Unchanged cards keep progress and new cards begin in box one.
+- If an accepted update changes a card's prompt or answer, that card returns to box one. A minor description or metadata correction keeps its progress. Rules for deleted cards and ambiguous changes still need refinement. Stable logical card identities across versions help compare cards.
 - A learner may publish their edited copy as a new course of their own, with a visible link to the source course. Publication rules for derivative content still need refinement.
 - A course in the initial product scope has a title, description, creator, language or subject, and flashcards.
 - The first search implementation uses [PostgreSQL full-text search with a GIN index](https://www.postgresql.org/docs/current/textsearch-indexes.html). [Trigram matching (`pg_trgm`)](https://www.postgresql.org/docs/current/pgtrgm.html) can be added if typo-tolerant search becomes useful.
@@ -48,11 +58,11 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 
 ## Open decisions
 
-- How changing course intervals affects cards with an existing next-review date.
+- Whether another session can start immediately when more cards remain due after a full session.
 - Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
 - Whether courses can also be private or unlisted, and whether they contain anything beyond flashcards.
-- How source updates are merged with locally edited cards, and how removed or substantially changed cards affect progress.
+- How deleted cards and ambiguous content changes are presented in the update preview.
 - The rules for publishing a derivative course, including attribution and content permissions.
 - The rating scale, rating eligibility, and the exact formula and presentation for top courses.
 - Search filters, language handling, and how published courses are reviewed or reported.
