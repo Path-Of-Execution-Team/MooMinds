@@ -28,8 +28,8 @@ Users can publish their own learning courses, such as a course covering 2,000 co
 
 - A course creator can add and edit flashcards through a form. A learner can also add or edit cards in their personal study copy without changing the source course.
 - The initial card model has a prompt and an answer. Cards may include uploaded images; whether images belong on the prompt, answer, or both sides needs a UI decision.
-- A creator or learner can import multiple flashcards from a CSV file. The import flow should show a preview, allow column mapping, report invalid rows, and require confirmation before adding cards.
-- Images can be attached through the card editor. Whether CSV may reference image files, and how a batch of images is matched to rows, remains open.
+- A creator or learner can import multiple flashcards from a **text-only CSV file**. The import flow should show a preview, allow column mapping, report invalid rows, and require confirmation before adding cards. CSV import does not upload images or fetch image references.
+- After import, the user may open any imported card in the editor and attach an image separately.
 - Uploaded files need type and size checks, safe storage and serving, and limits appropriate to the VPS. See [OWASP's file-upload guidance](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html).
 
 ## Agreed community-course model
@@ -67,7 +67,7 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 ## Open decisions
 
 - Whether another session can start immediately when more cards remain due after a full session.
-- The exact CSV columns, duplicate handling, row limits, and whether import can include images.
+- The exact CSV columns, duplicate handling, and row and file-size limits.
 - Image placement on cards, supported formats, size limits, storage location, and accessibility text.
 - Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
