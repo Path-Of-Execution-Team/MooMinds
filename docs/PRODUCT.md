@@ -4,6 +4,8 @@
 
 MooMinds is a free-to-use flashcard learning application. Reviews follow the classic five-box Leitner system. Users may opt in to study reminders by email or push notification.
 
+Users can sign in with email and password, Google, or Discord. App-level TOTP two-factor authentication is supported. See the [authentication requirements](AUTH.md).
+
 Users can publish their own learning courses, such as a course covering 2,000 common English words or algebraic identities. Other users can find and use these courses, rate them, and browse highlighted or top courses.
 
 ## Agreed community-course model
