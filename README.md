@@ -1,13 +1,13 @@
 # MooMinds
 
-To repozytorium jest wspólnym miejscem na dokumentację, planowanie i wdrożenia projektu MooMinds. Kod aplikacji znajduje się w osobnych repozytoriach: [API](https://github.com/Path-Of-Execution-Team/MooMinds.API), [GUI](https://github.com/Path-Of-Execution-Team/MooMinds.GUI) i [Worker](https://github.com/Path-Of-Execution-Team/MooMinds.Worker).
+This repository is the central place for MooMinds documentation, planning, and deployment work. The application code lives in separate repositories: [API](https://github.com/Path-Of-Execution-Team/MooMinds.API), [GUI](https://github.com/Path-Of-Execution-Team/MooMinds.GUI), and [Worker](https://github.com/Path-Of-Execution-Team/MooMinds.Worker).
 
-## Organizacja pracy
+## How we work
 
-- [Backlog i zadania](https://github.com/Path-Of-Execution-Team/MooMinds/issues): zadania produktowe i przekrojowe zapisujemy tutaj, a w treści wskazujemy repozytorium wykonawcze.
-- Błędy dotyczące jednego komponentu można zgłaszać w jego repozytorium; należy połączyć je z zadaniem nadrzędnym w MooMinds.
-- Milestone oznacza cel wydania, a iteracja w GitHub Projects oznacza sprint. Nie używamy milestone jako zamiennika sprintu.
-- Story points ustalamy zespołowo po Planning Poker według skali 1, 2, 3, 5, 8, 13. Nie wpisujemy punktów przed oszacowaniem.
-- [Sposób pracy, planowanie i retrospektywy](docs/SCRUM.md).
+- [Product backlog and tasks](https://github.com/Path-Of-Execution-Team/MooMinds/issues) live here. Each issue should identify the component repositories involved.
+- Component-specific bugs can be reported in their respective repositories and linked to a parent issue here.
+- Milestones represent release goals. Iterations in GitHub Projects represent sprints; milestones are not used as sprint substitutes.
+- The team estimates story points with Planning Poker using the scale 1, 2, 3, 5, 8, 13. Points are assigned only after a team estimate.
+- See the [Scrum workflow guide](docs/SCRUM.md) for planning and retrospectives.
 
-Do czasu utworzenia organizacyjnego GitHub Project bieżący backlog pozostaje dostępny w Issues tego repozytorium.
+Until an organization-wide GitHub Project is available, the backlog remains accessible through this repository's Issues.
