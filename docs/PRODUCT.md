@@ -19,10 +19,17 @@ Users can publish their own learning courses, such as a course covering 2,000 co
 ## Study setup and session size
 
 - Creating or publishing a source course is separate from studying it. The creator also starts a personal study copy to learn from their own course; source edits do not automatically change that copy.
-- Before the first lesson from any personal copy, a short form lets the learner set the session size, the mix of new cards and reviews, and all five Leitner intervals. This happens once per study copy. Reminder preferences are configured separately.
+- Before the first lesson from any personal copy, a short form lets the learner set the session size, the mix of new cards and reviews, all five Leitner intervals, and a study mode. This happens once per study copy. Reminder preferences are configured separately.
 - Each learner chooses their own settings; a copied course does not inherit its creator's learning intervals.
 - The default session contains up to **20 cards**. When reviews are due, the target mix is **10 new cards and 10 due reviews**. If one group has too few available cards, the other group fills the remaining places. With no reviews due, up to 20 new cards can appear.
-- Session size and mix can be changed in the personal copy's settings.
+- Session size, mix, and study mode can be changed in the personal copy's settings.
+
+## Study modes
+
+- **Simple mode:** show the prompt and four shuffled answer choices (A–D): the correct answer and three distinct distractors drawn from other cards in the same personal course copy.
+- **Hard mode:** show the prompt and an input field where the learner types the answer without seeing choices.
+- The selected mode belongs to the learner's personal copy. Both modes use the same five-box Leitner progression; only how an answer is given and checked changes.
+- Rules for courses with fewer than four distinct answers, text-answer matching, and cards whose answer is an image still need refinement.
 
 ## Adding course content
 
@@ -69,6 +76,7 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 - Whether another session can start immediately when more cards remain due after a full session.
 - The exact CSV columns, duplicate handling, and row and file-size limits.
 - Image placement on cards, supported formats, size limits, storage location, and accessibility text.
+- How to generate multiple-choice options when the course lacks three distinct distractors, and how to judge typed answers (spelling, case, whitespace, accents, synonyms, and formulas).
 - Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
 - Whether courses can also be private or unlisted, and whether they contain anything beyond flashcards.
