@@ -6,6 +6,8 @@ MooMinds supports sign-up and sign-in with email and password, Google, and Disco
 
 All sign-in methods lead to one MooMinds account and the same courses, learning progress, and reminder preferences. A user who enables TOTP must complete the TOTP challenge after the primary sign-in method, including Google or Discord, before receiving a fully authenticated session.
 
+TOTP is optional for users. A valid session does not require a new code for every page visit or app launch; a new sign-in session does. A trusted-device exemption can be considered later, after its security and recovery behavior are designed.
+
 ## Implementation requirements
 
 - Email/password: verify ownership of the email address, store only a modern adaptive password hash, provide a time-limited password-reset flow, and limit repeated sign-in attempts. [OWASP password storage guidance](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) recommends Argon2id where available.
@@ -17,7 +19,7 @@ All sign-in methods lead to one MooMinds account and the same courses, learning 
 
 ## Decisions for refinement
 
-- Whether TOTP is optional for all users or required for particular accounts or actions.
-- Whether an account may have multiple sign-in methods and how the user adds the first password to a social-login account.
-- The exact account-recovery procedure when both the authenticator and recovery codes are lost.
-- Session lifetime, device management, and whether to require reauthentication for sensitive account changes.
+- A user may link multiple sign-in methods from account settings after fresh verification. Define the exact flow for adding the first password to a social-login account and prevent removal of the last usable sign-in method.
+- Password reset uses verified email. TOTP recovery uses single-use recovery codes. There must be no automatic email-only bypass of an enabled second factor.
+- If the authenticator and all recovery codes are lost, no automatic bypass is offered. A support-assisted recovery procedure, if any, must be designed before release.
+- Session lifetime, device management, and reauthentication for sensitive account changes.

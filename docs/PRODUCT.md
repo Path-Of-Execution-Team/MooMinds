@@ -8,15 +8,29 @@ Users can sign in with email and password, Google, or Discord. App-level TOTP tw
 
 Users can publish their own learning courses, such as a course covering 2,000 common English words or algebraic identities. Other users can find and use these courses, rate them, and browse highlighted or top courses.
 
+## Leitner review schedule
+
+- MooMinds uses a chosen default interval schedule of **1, 2, 4, 8, and 16 days** for boxes one through five. These are product defaults, not a claim that every Leitner implementation uses the same dates.
+- A correct answer moves a card to the next box, up to box five. An incorrect answer returns it to box one. A correctly answered card in box five remains in box five and becomes due again after that box's interval.
+- A learner can change the five intervals in the settings of their own course copy. The intervals apply to that learner's progress in that copy; changing them does not alter the source course or anyone else's schedule.
+- The exact recalculation of cards already scheduled when intervals change still needs an acceptance rule.
+
 ## Agreed community-course model
 
-- A course has a creator and published versions. Editing a published course produces a new version rather than silently changing the version learners already use.
-- A learner adds a published course to their library and studies a specific version. The learner's Leitner boxes, review dates, and results belong to that learner, independently of the creator and other learners.
-- When a new version is published, the learner is offered an update and chooses whether to apply it. Updates are not automatic.
-- After an accepted update, unchanged cards keep their learning progress and new cards begin in box one. The rules for removed or substantially changed cards still need refinement. Stable logical card identities across versions are needed to recognize unchanged cards.
+- A course has a creator and published versions. Editing a published course produces a new version rather than silently changing existing learners' copies.
+- A learner makes a personal copy of a published course. They own and may edit that copy, its flashcards, and its Leitner intervals. Their progress belongs only to them.
+- The copy keeps a link to its source course and the source version from which it was made. When the creator publishes a new version, the learner may preview and optionally apply source changes. Updates are not automatic and must not silently overwrite local edits.
+- Unchanged cards keep their learning progress and new cards begin in box one after an accepted update. Removed, substantially changed, and locally edited cards require explicit update/conflict rules. Stable logical card identities across versions help recognize unchanged cards.
+- A learner may publish their edited copy as a new course of their own, with a visible link to the source course. Publication rules for derivative content still need refinement.
 - A course in the initial product scope has a title, description, creator, language or subject, and flashcards.
 - The first search implementation uses [PostgreSQL full-text search with a GIN index](https://www.postgresql.org/docs/current/textsearch-indexes.html). [Trigram matching (`pg_trgm`)](https://www.postgresql.org/docs/current/pgtrgm.html) can be added if typo-tolerant search becomes useful.
 - Top courses should consider both rating quality and the number of ratings. The exact ranking formula and eligibility rules remain to be agreed.
+
+## Reminder channels
+
+- The React and TypeScript GUI should be installable and usable as a progressive web app (PWA).
+- Push reminders use Web Push for supported desktop browsers and mobile PWAs. On iOS/iPadOS, Web Push applies to web apps added to the Home Screen; browser and platform support must be checked before offering the channel. Email remains an alternative. See [WebKit's Web Push guidance](https://webkit.org/blog/13878/web-push-for-web-apps-on-ios-and-ipados/) and [MDN's service-worker overview](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Offline_and_background_operation).
+- Reminders remain opt-in. Timing, frequency, quiet hours, and time-zone rules still need refinement.
 
 ## Confirmed technology
 
@@ -34,15 +48,15 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 
 ## Open decisions
 
-- Exact review intervals and when cards in each of the five Leitner boxes become due.
-- Whether an incorrect answer always returns a card to box one, and how a card in box five is handled after a correct answer.
-- Whether push means web push, mobile push, or both.
-- How users opt in or out, choose channels, and set reminder times and time zones.
+- How changing course intervals affects cards with an existing next-review date.
+- Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
 - Whether courses can also be private or unlisted, and whether they contain anything beyond flashcards.
-- How removed or substantially changed cards affect a learner's progress during an accepted course update.
+- How source updates are merged with locally edited cards, and how removed or substantially changed cards affect progress.
+- The rules for publishing a derivative course, including attribution and content permissions.
 - The rating scale, rating eligibility, and the exact formula and presentation for top courses.
 - Search filters, language handling, and how published courses are reviewed or reported.
-- The MVP release boundary, quality targets, and VPS capacity assumptions for HPA.
+- The MVP release boundary and quality targets.
+- VPS capacity, off-server backups, restore objectives, and HPA limits. These are tracked as deployment work for later agreement.
 
 These questions should be resolved during refinement before acceptance criteria and estimates are finalized.
