@@ -15,7 +15,13 @@ The first release includes:
 - Five-box scheduling and progress persistence. Both modes use the same scheduling rules.
 - A usable React/TypeScript PWA, Spring Boot API, PostgreSQL, and a repeatable Kubernetes deployment on the VPS. Vault-backed secrets, a capacity decision, backups, and a tested restore are release gates. HPA configuration and its resource limits must be checked against the actual VPS capacity.
 
-**Release check:** The team can run the create → publish → find → copy → configure → study → return for a due review journey on the deployed system; account recovery works; data survives redeployment and a backup restore; core access, privacy, and failure paths have been checked. The exact test evidence and performance targets are decided in issue #6.
+**Initial release gates:**
+
+- The create → publish → find → copy → configure → study → return-for-a-due-review journey passes automated end-to-end checks and a manual check on the deployed VPS. Password reset and both answer modes are covered.
+- No open P0 or P1 defects affect the MVP journey. Automated authorization checks demonstrate that one account cannot read or change another learner's personal copy or progress.
+- The main journey works on a narrow mobile viewport (360 CSS px) and with keyboard navigation, including validation and error states.
+- On the target VPS, a 15-minute test with 10 concurrent learners records a p95 response time of at most 2 seconds for core API requests (excluding sign-in and bulk CSV import) and fewer than 1% server errors. Record the test data and setup; adjust the target only through an explicit decision based on measured capacity.
+- An encrypted off-server backup is restored into an isolated environment. The demonstrated recovery point is at most 24 hours old and the recovery time is at most 8 hours. The team records the restore steps and result.
 
 ## M2 — Community and Content
 
@@ -32,6 +38,6 @@ This milestone adds opt-in email and Web Push reminders through the Spring Boot 
 ## Planning rules
 
 - These milestone boundaries are a planning proposal. The team confirms them in issue #6 and may split large stories during refinement.
-- Milestones track release outcomes across all four repositories. GitHub Project iterations, once available, track short sprints. A story is assigned to a sprint only after refinement and team estimation.
+- Milestones track release outcomes across all four repositories. GitHub Project iterations track short sprints. A story is assigned to a sprint only after refinement and team estimation.
 - No dates, assignees, or Fibonacci points are implied by this roadmap.
 - A design decision is recorded in a short decision record linked from its issue before dependent implementation work starts.

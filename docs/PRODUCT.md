@@ -42,6 +42,7 @@ Users can publish their own learning courses, such as a course covering 2,000 co
 ## Agreed community-course model
 
 - A course has a creator and published versions. Editing a published course produces a new version rather than silently changing existing learners' copies.
+- Removing a published source course is a soft deletion. It disappears from public discovery and cannot be used to create new study copies. Existing personal study copies keep their cards, settings, due dates, and progress and remain usable. The source link can show that the original is unavailable; no update is pulled from a deleted source. This rule also applies when the creator studies their own course.
 - A learner makes a personal study copy of a course. This includes the creator when they want to study their own course. They may edit that copy, its flashcards, and its Leitner intervals. Their progress belongs only to them.
 - The copy keeps a link to its source course and the source version from which it was made. When the creator publishes a new version, the learner may preview and optionally apply source changes. Updates are not automatic and must not silently overwrite local edits.
 - An update is shown in one preview. The learner chooses which source changes to import; locally edited cards are kept unless the learner explicitly selects the source version for that card. Unchanged cards keep progress and new cards begin in box one.
@@ -79,12 +80,12 @@ The [MooMinds backlog](https://github.com/Path-Of-Execution-Team/MooMinds/issues
 - How missing choices are supplied when other cards do not provide enough distinct distractors, how multi-answer selections are scored, and how image-only answers work in hard mode.
 - Reminder timing, frequency, quiet hours, time zones, and fallback when Web Push is unavailable.
 - User accounts and authentication, including how flashcards and preferences are associated with a user.
-- Whether courses can also be private or unlisted, and whether they contain anything beyond flashcards.
+- Whether courses can also be private or unlisted, whether they contain anything beyond flashcards, and who can restore a soft-deleted source course.
 - How deleted cards and ambiguous content changes are presented in the update preview.
 - The rules for publishing a derivative course, including attribution and content permissions.
 - The rating scale, rating eligibility, and the exact formula and presentation for top courses.
 - Search filters, language handling, and how published courses are reviewed or reported.
-- The MVP release boundary is proposed in [ROADMAP.md](ROADMAP.md); the team still needs to confirm quality targets and release evidence.
+- The MVP release boundary and initial measurable release gates are proposed in [ROADMAP.md](ROADMAP.md); the team can revise thresholds with evidence from the actual VPS before release.
 - VPS capacity, off-server backups, restore objectives, and HPA limits. These are tracked as deployment work for later agreement.
 
 These questions should be resolved during refinement before acceptance criteria and estimates are finalized.
